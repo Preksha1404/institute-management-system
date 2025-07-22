@@ -93,15 +93,14 @@ const collegeRegister = (req, res) => {
             }
 
             // Continue with college registration
-            const { name, university, degree, courses, institute } = req.body;
+            const { university, degree, courses, institute } = req.body;
 
             // Validate input data
-            if (!name || !university || !degree || !courses || !institute)
+            if (!university || !degree || !courses || !institute)
                 return res.status(400).json({ message: "All fields are required" });
 
             // Create a new college
             const newCollege = {
-                name,
                 university,
                 degree,
                 courses,
